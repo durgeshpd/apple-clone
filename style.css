@@ -1,0 +1,350 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #050505;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: center;
+    /* Center everything in the navbar */
+    align-items: center;
+    gap: 40px;
+    /* Equal spacing between all items */
+    width: 100%;
+    max-width: 1200px;
+    /* Limit the max width of the navbar */
+    margin: 0 auto;
+    /* Center the navbar content */
+    padding: 0 20px;
+    /* Add padding for space */
+}
+
+.navbar .hamburger {
+    display: none;
+}
+
+.navbar .navbar-list {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.navbar .icons {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.part1,
+.part2,
+.part3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+}
+
+.part1 {
+    background-color: #050505;
+    margin-bottom: 10px;
+}
+
+.part2 {
+    background: linear-gradient(to bottom, #10174e, #b6c4f3);
+}
+
+.part2 img {
+    width: 55%;
+}
+
+.part3 {
+    background-color: #f5f5f7;
+    margin-top: 10px;
+}
+
+.part4 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 auto;
+    padding: 10px;
+    gap: 10px;
+}
+
+.part4 img {
+    width: 100%;
+    height: 50vh;
+}
+
+.swiper {
+    width: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 65vh;
+    object-fit: cover;
+}
+
+.swiper-slide:nth-child(2n) {
+    width: 40%;
+}
+
+.swiper-slide:nth-child(3n) {
+    width: 20%;
+}
+
+
+
+/* Styles for Mega Menu */
+.megamenu {
+    position: absolute;
+    top: 40px;
+    /* Position it directly under the hamburger menu */
+    left: 0;
+    width: 100vw;
+    background-color: white;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 999;
+    padding: 20px 0;
+    height: 40vh;
+    transform: translateX(-100%);
+    /* Start off-screen */
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s;
+}
+
+.megamenu.visible {
+    transform: translateX(0);
+    /* Slide in to view */
+    opacity: 1;
+    visibility: visible;
+}
+
+.navbar-list.active {
+    display: none;
+    /* Hide the navbar list when active */
+}
+
+/* CSS for store menu visibility */
+.store:hover .megamenu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.megamenu .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.megamenu .m1 {
+    display: flex;
+    margin-left: 30px;
+}
+
+.megamenu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: #050505;
+}
+
+.megamenu ul p {
+    color: #162006b9;
+}
+
+.megamenu .m1:nth-child(2) ul li,
+.megamenu .m1:nth-child(3) ul li {
+    padding-bottom: 5px;
+}
+
+.blurred {
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+    transition: 0.3s ease;
+}
+
+#shopLatest {
+    cursor: pointer;
+}
+
+.icons #hamburger {
+    display: none;
+}
+
+#backMenu {
+    display: none;
+}
+
+
+/* Media Query for smaller screens */
+@media only screen and (max-width: 1295px) {
+
+    /* Show hamburger icon for mobile */
+    .icons #hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .navbar-container {
+        display: flex;
+        justify-content: center;
+        /* Center everything in the navbar */
+        align-items: center;
+        gap: 40px;
+        /* Equal spacing between all items */
+        width: 100%;
+        max-width: 1200px;
+        /* Limit the max width of the navbar */
+        margin: 0 auto;
+        /* Center the navbar content */
+        padding: 0 20px;
+        /* Add padding for space */
+    }
+
+    .logo i,
+    .icons i {
+        font-size: 2.5rem;
+        /* Increase the size of the logo and icons */
+        color: white;
+        /* Customize color if needed */
+    }
+
+    /* Default state for navbar-list on small screens */
+    /* Default state for navbar-list (hidden by default) */
+    .navbar .navbar-list {
+        display: none;
+        /* Ensure navbar-list is hidden by default */
+        flex-direction: column;
+        /* Stack the items vertically */
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background-color: white;
+        color: black;
+        margin: 0;
+        padding: 10px 0;
+        align-items: center; /* Center items horizontally */
+        justify-content: center; /* Center items vertically if there's extra height */
+        text-align: center; /
+    }
+
+    .megamenu {
+        display: flex;
+        top: 0;
+    }
+
+    /* Show navbar-list when the hamburger is clicked (when active class is added) */
+    .navbar-list.active {
+        display: flex;
+        /* Show navbar-list only when hamburger is clicked */
+    }
+
+    #backMenu {
+        display: block;
+    }
+
+}
+
+
+.footer {
+    display: flex;
+    justify-content: flex-start;  /* Aligns the content to the left horizontally */
+    align-items: flex-start;      /* Aligns the content to the top vertically */
+    text-align: left;             /* Aligns the text to the left */
+    padding: 20px;
+    background-color: rgb(245, 245, 247);
+}
+
+.f1 {
+    max-width: 800px; /* Optional: Set a max width to prevent text from stretching too wide */
+    width: 100%;      /* Allow the content to expand */
+    margin: 0 auto;   /* Center the container itself */
+}
+
+.f1 p {
+    margin-bottom: 15px;  /* Add space between paragraphs */
+    text-indent: 0;        /* Remove text-indent if unnecessary */
+    line-height: 1.6;      /* Adjust line spacing for better readability */
+    font-size: 12px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.f2 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Creates 5 equal columns */
+    gap: 20px;
+    padding: 20px;
+}
+
+.f2-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Adds space between each item */
+}
+
+.f2-column p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333; /* Adjust text color */
+}
+
+.Privacy p:not(:last-child)::after {
+    content: " |";
+    margin-left: 5px;
+}
+
+.Privacy p:last-child {
+    margin-bottom: 0; /* Remove margin for the last item */
+}
+
+.f3 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Privacy {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping of the elements in the Privacy section */
+}
+
+.Privacy p {
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
